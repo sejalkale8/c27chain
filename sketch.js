@@ -7,7 +7,7 @@ var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
 
-var log6, chain;
+var log6;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -18,6 +18,8 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
 
+
+    
 
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
@@ -38,11 +40,13 @@ function setup(){
     log5 = new Log(870,120,150, -PI/7);
 
     bird = new Bird(100,100);
-
+    
+    
     
 
-    log6= new Log(230,180,80,PI/2);
-    chain = new Chain(bird.body, log6.body);
+   
+log6 = new Log(230,180,80,PI/2);
+chain= new Chain(bird.body, log6.body);
 
 }
 
@@ -72,4 +76,5 @@ function draw(){
 
     log6.display();
     chain.display();
+
 }
